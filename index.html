@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="vehicle renting system">
+	  <meta name="keywords" content="two wheeler for rent, book vehicles on rent">
+  	<meta name="author" content="WheelsYourWay">
+    <title>WheelsYourWay-Home</title>
+    <link rel="stylesheet" href="./css/index.css">
+  </head>
+
+  <body style="background-color:black">
+    <header>
+      <div id="branding">
+        <h1><span class="highlight">WheelsYourWay</span></h1>
+      </div>
+      <div class="container">
+        <nav>
+          <ul>
+            <li class="current"><a href="index.html">Home</a></li>
+            <li><a href="pages/category.html">Categories</a></li>
+            <li><a href="pages/whyUs.html">Why Us?</a></li>
+            <li><a href="pages/aboutUs.html">About Us</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+            <li><a href="pages/signup.html">Sign Up</a></li>
+            <li><a href="pages/login.html">Log In</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+
+  <div class="start-bookings">
+      <a href="pages/bookings.html"><h1 style="text-align: center;">START YOUR JOURNEY WITH US>>></h1></a>
+  </div>
+
+ 
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        
+        <img src="img/top1.jpg" style="width:100%">
+    
+      </div>
+      
+      <div class="mySlides fade">
+      
+        <img src="img/top2.jpg" style="width:100%">
+       
+      </div>
+      
+      <div class="mySlides fade">
+        
+        <img src="img/top3.jpg" style="width:100%">
+       
+      </div>
+      
+  </div>
+
+    <script>
+      var slideIndex = 0;
+      showSlides();
+      
+      function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+     
+        slides[slideIndex-1].style.display = "block";  
+     
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+      }
+      </script>
+
+
+
+    <footer>
+      <p>&copy; Copyright 2020 WheelsYourWay India Private Ltd. All rights reserved.</p>
+    </footer>
+
+  </body>
+</html>

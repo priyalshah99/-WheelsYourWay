@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="vehicle renting system">
+	  <meta name="keywords" content="two wheeler for rent, book vehicles on rent">
+  	<meta name="author" content="WheelsYourWay">
+    <title>Booking</title>
+    <link rel="stylesheet" href="../css/index.css">
+
+    <!-- Javascript -->
+    <script type="text/Javascript">
+    var citiesByState  = {
+  "Ahmedabad": [ "Ambawadi","Jodhpur","Naranpura","Navrangpura","Ghatlodia","Bopal","Sarkhej","SG highway"],
+  "Amritsar":["LAWRENCE ROAD","MALL ROAD","SHASTRI NAGAR","BASANT AVENUE","RANI KA BAGH"],
+  "Banglore":["Rajajinagar","Richmond Town","Benson Town","Ulsoor","Malleshwaram"],
+  "Chennai":["Velachery","Nugambakkam","East-Coast Road","Poes Garden","Alwarpet"],
+  "Chandigarh":["Sector 5","Sector 8","Sector 9","Sector 10","Sector 13"],
+  "Delhi":["Golf Links","Vasant Vihar","Sundar Nagar","Shanti Niketan","Greater Kailash"],
+  "Gandhinagar":["Sector 3","Sector 21","Sector 19","Sector 10","Sector 5"],
+  "Hyderabad":["Gachibowli","HITEC City","Nallagandla","Chandanagar","Manikonda"],
+  "Jaipur":["Bapu Nagar","Jagatpura","Jaisinghpura","Kalwar Road","Bani Park"],
+  "Kolkata":["Alipur","Bhowanipur","Ballygunge","Park Street","Lilva"],
+  "Mumbai":["Bandra","Andheri","Malad","Mulund","Linking Road"],
+  "Pune":["Sangamwadi","Shukrawar Peth","Ashok Nagar","Shivaji Nagar","Koregaon Park"],
+  "Rajkot":["Hari Nagar","Kangsiyali","Ishvariya","Bhakti Nagar","Madhapar"],
+  "Ranchi":["Ashok Nagar","Resaldar Nagar","Lalpur","Harmu Housing","Kantatoli Colony"],
+  "Surat":["Parle point","God dod","Athwa","Kamrej","Dindoli"]
+  }
+
+  function makeSubmenu(value) {
+  if(value.length==0) document.getElementById("areaSelect").innerHTML = "<option></option>";
+  else {
+  var areasOptions = "";
+  for(areaId in citiesByState[value]) {
+  areasOptions+="<option>"+citiesByState[value][areaId]+"</option>";
+  }
+  document.getElementById("areaSelect").innerHTML = areasOptions;
+  }
+  }
+
+  function resetSelection() {
+  document.getElementById("citySelect").selectedIndex = 0;
+  document.getElementById("areaSelect").selectedIndex = 0;
+  
+}
+</script>
+</head>
+
+  <body onload="resetSelection()">
+    <header>
+      <div id="branding">
+        <h1><span class="highlight">WheelsYourWay</span></h1>
+      </div>
+
+        <nav class="container">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="whyUs.html">Why Us?</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="login.html">Log In</a></li>
+          </ul>
+        </nav>
+
+    </header>
+    
+    <div class="align">
+		<div class="card">
+			<div class="head">
+				<div></div>
+				<h1 style="font-size: 22px;">🛵 Book Your Dates 🛵</h1>
+				<div></div>
+      </div>
+      
+			<div class="tabs">
+				<form action="category.html">
+  				<div class="inputs">
+
+            <div class="input">
+              <label>Select City:</label>
+              <select class="dropdown" id="citySelect" size="1" onchange="makeSubmenu(this.value)">
+                <option value="" disabled selected>Choose city</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Amritsar">Amritsar</option>
+                <option value="Banglore">Banglore</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Gandhinagar">Gandhinagar</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Jaipur">Jaipur</option>                
+                <option value="Kolkata">Kolkata</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Pune">Pune</option>                
+                <option value="Ranchi">Ranchi</option>                
+                <option value="Surat">Surat</option>
+              </select>
+            </div>
+            
+						<div class="input">
+              <label>Select Area:</label>
+                <select class="dropdown" id="areaSelect" size="1">
+                  <option value="" disabled selected>Choose area</option>
+                  <option></option>
+                </select>
+            </div>
+                        
+						<div class="dates">
+              <label>Enter Trip Start Date And Time:</label>
+              <input type="datetime-local" name="start-date"></span>
+            </div>
+
+						<div class="dates">
+              <label>Enter Trip End Date And Time:&nbsp;&nbsp;</label>
+              <input type="datetime-local" name="end-date">
+            </div>
+
+            <div class="input">
+              <label>Select Package:</label>
+                <select class="dropdown" name="packages">
+                    <option value="one-day">1 Day</option>
+                    <option value="two-days">2 Days</option>
+                    <option value="three-days">3 Days</option>
+                    <option value="five-days">5 Days</option>
+                    <option value="seven-days">7 Days</option>
+                    <option value="thirty-days">30 Days</option>
+                    <option value="ninety-days">90 Days</option>                
+                    <option value="one-eighty-days">180 Days</option>
+                    <option value="three-sixty-five-days">365 Days</option>           
+                  </select>
+            </div>
+
+          </div>
+                <button type="submit">Next</button><br>
+				</form>
+			</div>
+		</div>
+    </div>
+    
+    
+    <footer>
+      <p>&copy; Copyright 2020 WheelsYourWay India Private Ltd. All rights reserved.</p>
+    </footer>
+
+  </body>
+</html>
